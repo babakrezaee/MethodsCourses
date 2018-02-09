@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\usepackage{graphicx} % Required for including images
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+\title{Title} % replace with an appropriate title
+\author{Author 1\footnote{Affiliation \& email  } \\
+Author 2\footnote{Affiliation \& email }} % replace with your name
+ 
+ % Make title
+ \maketitle
+
+% Abstract
+
+
+\begin{abstract}
+You can write your abstract here!
+\end{abstract}
+
+
+
+\section{Introduction}
+You can write your introduction here.\par
+Another way of going to starting a new paragraph is using $\backslash \backslash$ \\ 
+But, using $\backslash \backslash$, the next paragraph will not start with an indent.
+
+\section{Literature Review}
+
+\subsection*{Sociological Arguments}
+Using ``*'' stops numbering section, subsection, and subsections.
+
+\subsection*{Psychological Arguments}
+
+\section{Theoretical Discussions}
+A general form of a regression model can be find in Equation \ref{Regression}. A more parsimonious way of writing a regression model is using vectors (Equation \ref{RegressionVector}) .
+\begin{equation} \label{Regression}
+Y_{it}=\beta + \beta_1 x_{1it} + \beta_2 x_{2it}+\cdots+\beta_k x_{kit}+\epsilon_{it}~for i=1,\cdots,N~and~t=1,\cdots,T
+\end{equation}
+
+\begin{equation} \label{RegressionVector}
+Y=X\beta+\epsilon
+\end{equation}
+
+\section{Empirical Results}
+
+
+
+<<echo=FALSE, results=hide>>=
+2+2
+@
+
+
+
+
+<<results=hide, echo=FALSE>>=
+mydata<-read.csv("C:/Users/srezaeed/Desktop/GB_FRED_cpi_2007.csv")
+mydata$ExpenditureDebtRatio<-mydata$ExpenditureGDP/mydata$DebtGDP
+mydata$ExpenditureDebtRatio<-mydata$DebtGDP/mydata$ExpenditureGDP
+mydata$condition <-ifelse(mydata$ExpenditureDebtRatio > 0.5,c("Bad"), c("Good"))
+@
+
+<<results=hide>>=
+library(ggplot2)
+@
+
+
+\begin{center}
+<< echo=FALSE, fig=TRUE>>=
+qplot(deflator, cpi_change, data=mydata)
+@
+\captionof{figure}{Landis et al. (2016) Political Geography}
+\end{center}
+
+
+\begin{center}
+<< echo=FALSE>>=
+ggplot(data=mydata, aes(x=president, y=ExpenditureDebtRatio)) + 
+  geom_bar(aes(fill=president), stat="identity")
+@
+\captionof{figure}{You can add a caption for this graph here!}
+\end{center}
+
+\section{Appendix}
+<<>>=
+2+2
+mydata<-read.csv("C:/Users/srezaeed/Desktop/GB_FRED_cpi_2007.csv")
+mydata$ExpenditureDebtRatio<-mydata$ExpenditureGDP/mydata$DebtGDP
+mydata$ExpenditureDebtRatio<-mydata$DebtGDP/mydata$ExpenditureGDP
+mydata$condition <-ifelse(mydata$ExpenditureDebtRatio > 0.5,c("Bad"), c("Good"))
+library(ggplot2)
+qplot(deflator, cpi_change, data=mydata)
+@
+
+
+
+
+
+\end{document}
