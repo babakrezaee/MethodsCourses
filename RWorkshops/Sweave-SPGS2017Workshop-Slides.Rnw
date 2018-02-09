@@ -1,0 +1,145 @@
+\documentclass{beamer}
+%
+
+\usepackage{graphicx} % Required for including images
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+
+
+
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+
+\mode<presentation>
+
+  \usetheme{Warsaw}      % or try Darmstadt, Madrid, Warsaw, ...\textbf{\(\(\(\)\)\)}}
+
+  \usecolortheme{beaver} % or try albatross, beaver, crane, ...
+  \usefonttheme{serif}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamercolor{block title}{use=structure,fg=white,bg=red!75!black}
+  \setbeamercolor{block body}{use=structure,fg=black,bg=red!10!white}
+  
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{tikz} %Required for drawing graphs%
+\usepackage[osf,sc]{mathpazo} %%To make math non-italic
+\usepackage{eulervm}
+
+
+\title[Fording differences?]{Fording differences? Conditions mitigating water insecurity in the Niger River Basin}
+\author[Landis et al.(2016) ]{Steven T. Landis \\
+Babak RezaeeDaryakenari \\
+Yifan Zhang\\
+Cameron G. Thies\\
+Ross Maciejewski
+}
+\institute{School of Politics \& Global Studies \\[\medskipamount]
+      Arizona State University \\
+      \texttt{\textcolor{blue}{Steven.Landis@asu.edu}}
+ }
+\small\date{Political Geography 2016}
+
+\defbeamertemplate*{footline}{shadow theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fil,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertframenumber\,/\,\inserttotalframenumber\hfill\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Table of contents}
+  \tableofcontents
+\end{frame}
+
+\section{Research question}
+
+\begin{frame}{Research question}
+
+
+\begin{itemize}
+\item How conflict and religion are associated? 
+\item \textcolor{red}{The literature:} Religion $\Rightarrow$conflict;  Using ``the content and nature of religion itself to explain correlations between religious conflicts and their dynamics and outcomes". For example, Islam, Sunni, Shia, ...\pause
+\item Are religious identities and ideologies given, fixed, and predictive of behavior? \pause
+\item \textcolor{red}{This study:} Constructivisim and instrumentalism $\Rightarrow$ religious identity malleable and is manipulable by powerholders/ politicians /elites \pause
+\item Thus, this paper challenges "religion-centric" explanations of "[religious] conflicts", and leads us toward an "actor-centric, instrumentalist" approach.
+\end{itemize}
+
+\end{frame}
+
+\section{Theoretical Discussions}
+
+\begin{frame}{Hypotheses \& implications}
+
+\begin{block}{Hypothesis 1.a}
+The incidence of political violence from water insecurity decreases as the density of secondary road networks increase.
+\end{block}\pause
+
+\begin{block}{Hypothesis 1.b}
+The incidence of political violence from water insecurity increases as the density of secondary road networks increase.
+\end{block}\pause
+
+\begin{block}{Hypothesis 2}
+The incidence of political violence from water insecurity increases as the distance from the Niger River increases.
+\end{block}
+
+
+\end{frame}
+
+\section{Empirical Results}
+\begin{frame}{Graphs}
+
+<<echo=FALSE>>=
+library("ggplot2")
+mydata<-read.csv("C:/Users/srezaeed/Desktop/GB_FRED_cpi_2007.csv")
+mydata$ExpenditureDebtRatio<-mydata$ExpenditureGDP/mydata$DebtGDP
+mydata$ExpenditureDebtRatio<-mydata$DebtGDP/mydata$ExpenditureGDP
+mydata$condition <-ifelse(mydata$ExpenditureDebtRatio > 0.5,c("Bad"), c("Good"))
+@
+
+\begin{center}
+<<echo=FALSE, fig=TRUE>>=
+qplot(deflator, cpi_change, data=mydata, main="Scatterplot", xlab="GDP Deflator", ylab="Change in Customer Price Index")+ coord_fixed(ratio = 0.45)
+@
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+<<echo=FALSE>>=
+library(xtable)
+lm1 <- lm(ExpenditureDebtRatio ~ cpi_change+senate_dems+senate_rep, data = mydata)
+@
+
+
+<<echo=FALSE, print=FALSE, results=tex>>=
+print(xtable(lm1),floating=FALSE)
+@
+\captionof{table}{You can the title of this table here!}
+
+
+
+\end{frame}
+
+\end{document}
