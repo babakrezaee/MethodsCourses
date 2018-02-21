@@ -1,0 +1,278 @@
+---
+title: "Basic Properties of OLS"
+author: "Babak RezaeeDaryakenari"
+date: "February 17, 2018"
+output:
+  pdf_document:
+    keep_tex: true
+    toc: false
+    number_sections: yes
+
+fontsize: 10pt
+
+linkcolor: blue
+
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#  Out of Sample Predictive Performance of Variable Subsets  
+
+```{r}
+library(xtable)
+options(scipen=999)
+options(digits = 3)
+
+#load sample data
+yx=read.csv("https://github.com/babakrezaee/MethodsCourses/blob/master/POS604_2018/sim-reg-data.csv?raw=true")
+
+```
+
+```{r, results="asis"}
+print(xtable(summary(yx)),
+      comment = FALSE)
+
+```
+
+
+```{r}
+lmf=lm(y~.,data=yx)
+```
+
+
+```{r, results='asis'}
+print(xtable(summary(lmf)), comment = FALSE)
+```
+
+
+
+```{r, results='hide'}
+###Train/test
+
+n=nrow(yx)
+nd=100
+
+set.seed(99)
+
+rmse=function(y,yhat){sqrt(mean((y-yhat)^2))}
+
+frac=.75
+
+ntrain=floor(n*frac)
+
+resM=matrix(0.0,nd,2)
+
+for(i in 1:nd) {
+  print(i)
+  ii=sample(1:n,ntrain)
+  dftrain=yx[ii,]; dftest=yx[-ii,]
+  
+  lm12=lm(y~x1+x2,dftrain)
+  resM[i,1]=rmse(dftest$y,predict(lm12,dftest))
+  
+  lm3=lm(y~x3,data=dftrain)
+  resM[i,2]=rmse(dftest$y,predict(lm3,dftest))
+
+}
+```
+
+```{r}
+
+#plot the results
+colnames(resM)= c("x12","x3")
+boxplot(resM)
+
+```
+
+
+```{r, results='hide'}
+reg1=y~x1; reg2=y~x2
+reg3=y~x3; reg4=y~x4
+reg5=y~x5; reg12=y~x1+x2
+regs=list(reg12,reg1,reg2,reg3,reg4,reg5)
+
+n=nrow(yx)
+nd=100
+set.seed(199)
+rmse=function(y,yhat){sqrt(mean((y-yhat)^2))}
+
+frac=.75
+resM=matrix(0.0,nd,length(regs))
+ntrain=floor(n*frac)
+for (i in 1:nd){
+    ii=sample(1:n,ntrain)
+    dftrain=yx[ii,]; dftest=yx[-ii,]
+    k=1;
+    for (reg in regs) {
+      print(reg)
+      lm=lm(reg,data=dftrain)
+      resM[i,k]=rmse(dftest$y,predict(lm,dftest))
+      k=k+1
+    }
+}
+```
+
+```{r}
+colnames(resM)=c("x12","x1","x2","x3","x4","x5")
+boxplot(resM)
+```
+
+\newpage
+
+#  Properties of Least Squares
+
+## $\hat{\beta}$ by Matrix Operations
+
+```{r}
+yx=read.csv("https://github.com/babakrezaee/MethodsCourses/blob/master/POS604_2018/sim-reg-data.csv?raw=true")
+lmf=lm(y~.,yx)
+
+X=cbind(rep(1,nrow(yx)),yx$x1,yx$x2,yx$x3,yx$x4,yx$x5)
+y=yx$y
+xtx=t(X) %*% X
+bhat=solve(xtx) %*% t(X) %*% y
+
+comp=cbind(data.frame(summary(lmf)$coef)[,1],bhat)
+colnames(comp)=c("matrix_method","lm_output")
+rownames(comp)=c("intercept","x1","x2","x3","x4","x5")
+
+```
+
+Now, we can compare the estimated coeffiientcs from lm function and from direct matrix calculations.
+```{r, results='asis'}
+print(xtable(comp),comment = FALSE)
+```
+
+If FOC holds, then $X^T \epsilon=X^T (y-X\hat{\beta})=0$, we can check this:
+
+```{r}
+round(t(X) %*% (y-X %*% bhat),digits=4)
+
+```
+
+As the above results show, FOC conditions hold.
+
+
+## $\hat{\sigma}$ and Standard errors
+
+```{r}
+shat_matrix=sum((y-X %*% bhat)^2)/(nrow(yx)-ncol(X))
+
+cat("sigma hat using matrix methid is:", shat_matrix, "\n")
+
+shat=summary(lmf)$sigma
+cat("sigma hat frol estimation results is:", shat_matrix, "\n")
+bhat_sd=shat*sqrt(diag(solve(t(X) %*% X)))
+
+comp=cbind(data.frame(summary(lmf)$coef)[,2],bhat_sd)
+colnames(comp)=c("matrix_method","lm_output")
+rownames(comp)=c("intercept","x1","x2","x3","x4","x5")
+
+```
+
+```{r, results='asis'}
+print(xtable(comp),comment = FALSE)
+```
+
+## Correlations
+
+```{r}
+yxd=yx
+## De-mean regressors
+for (i in 2:6 ) {
+  yxd[[i]]=yxd[[i]]-mean(yxd[[i]])
+}
+
+lmd=lm(y~.,data=yxd)
+summary(lmd)
+
+mean(yxd$y)
+
+```
+
+When we demean the explanatory variables, their estimated coefficients do not change, while the intercept changes, and it is equal to the mean of $y$.
+
+
+
+```{r}
+fmat=cbind(lmf$fitted,lmf$residuals)
+colnames(fmat)=c("yhat","residuals")
+plot(fmat, col="navy blue")
+legend(x='bottomright', legend=paste('Correlation =',round(cor(fmat)[2,1],3)))
+```
+
+One of the assumptions of OLS for being the Best Linear Unbiased and Estimator (BLUE) estimator is that $X\perp\epsilon$, i.e. regressors,$X$, and residuals, $e$, should be orthogonal. While a mathematical concept, orthogonality is intuitive: the information that $X$ and $e$ have are disjoint, that is there is not any information in $X$ that can be retrieved from $e$, and vice versa. Since $\hat{y}$ is the variations in $y$ that are explained by $X$, then the information that we can get from the variations in $e$ should not explain the variations in $\hat{y}$. 
+
+
+```{r}
+cat("The square of the correlation between y and y_fitted is: ", cor(yx$y,lmf$fitted)^2, ", and the estimated R_square is: ", summary(lmf)$r.squared,"\n")
+
+```
+That is, $cor(y,\hat{y})^2=R^2$.
+
+
+# Orthogonalized Regression
+
+```{r}
+xyd=read.csv("https://github.com/babakrezaee/MethodsCourses/blob/master/POS604_2018/sim-reg-data.csv?raw=true")
+lmfy=lm(y~x1+x2+x3+x4,data=xyd)
+```
+
+
+```{r, results='asis'}
+print(xtable(summary(lmfy)), comment = FALSE)
+```
+
+Regress $x5$ on $x1-4$ and then replace $x5$ with the residuals from this regression.
+
+
+```{r}
+lmf5=lm(x5~x1+x2+x3+x4,data=xyd)
+e5=lmf5$residuals
+xyde=cbind(xyd[,1:5],e5)
+lmfe=lm(y~.,xyde)
+```
+
+
+```{r, results='asis'}
+print(xtable(summary(lmfe)), comment = FALSE)
+```
+
+The estimated coefficients of $x1-4$ are identical in regressing $y$ on $(x1, x2, x3, x4)$, and $y$ on $(x1, x2, x3, x4, xt5)$. The reason is that we removed the information/variation in x5 that can be explained by $(x1, x2, x3, x4)$, so $(x1, x2, x3, x4)$ are orthogonal to $xt5$. That is why addign $xt5$ does not change the etimated coefficients of $x1, x2, x3, and x4$.
+
+
+The estimated coefficient of $x5$ in the regression of $y$ on $x1-5$ is equal to the estimated coeffient of $e5$ in the regression of $y$ on $x1-4$ and $e5$. This makes sense because the estimated coefficient of $x5$ in the former model only explains those variations in $y$ that cannot be explained by $x1-4$. Thus, removing the associations/correlation/shared information between $x5$ and $x1-4$ does not affect the estimated coefficient of $x5$'s residuals from $x5~x1-5$.
+
+
+
+```{r}
+lmf=lm(y~.,xyd); shat=summary(lmf)$sigma
+
+shat/sqrt(sum(e5^2))
+
+```
+
+This number is the standard error of x5's estimated coefficient in the regression of $y$ on $x1-5$.
+
+```{r}
+cat("The R-squared from the regression of x4 on x1-4 is: ", summary(lmf5)$r.squared ,"\n")
+```
+
+
+
+```{r, results='asis'}
+lmf=lm(y~x5,xyd)
+print(xtable(summary(lmf)), comment = FALSE)
+```
+
+
+This is basically another presentation of the Bias-Variance tradeoff. When we include only $x5$ to predict and explain the variations in $y$, we are using a simpler model with a smaller variance. However, we can speculate this estimated coefficient can be biased. 
+
+When we add $x1-4$ to the regression of $y$ on $x5$, we increase the complexity of the model. Though this can decrease the estimation bias, it increases the variance os estimation. This can be seen clearly as the standard error of the coefficient of $x5$ in the regression of $y$ on $x5$ is much smaller that its estimated standard error in the regression of $y$ on $x1-5$. The $R^2=1$ of the regression of $x5$ on $x1-4$ also shows that adding $x1-4$ to the regression of $y$ on $x5$ can decrease the explanatory power of this variable, as all the variations in $x5$ can be explained by a iinear combinantion of $x1-4$. This problem is know as multicolinearity problem, affecting estimated standard error, and so t-test, and p-value of the estimated coefficients.
+
+
+
