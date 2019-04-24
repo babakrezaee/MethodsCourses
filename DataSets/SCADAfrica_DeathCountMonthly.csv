@@ -30,7 +30,6 @@ ccode,countryname,styr,ndeath
 420,Gambia,2013,0
 420,Gambia,2014,3
 432,Mali,1990,0
-432,Mali,1991,267
 432,Mali,1992,7
 432,Mali,1993,1
 432,Mali,1994,0
@@ -50,8 +49,6 @@ ccode,countryname,styr,ndeath
 432,Mali,2010,5
 432,Mali,2011,3
 432,Mali,2012,79
-432,Mali,2013,237
-432,Mali,2014,315
 433,Senegal,1990,0
 433,Senegal,1991,2
 433,Senegal,1992,0
@@ -97,7 +94,6 @@ ccode,countryname,styr,ndeath
 434,Benin,2011,1
 434,Benin,2012,0
 434,Benin,2014,0
-435,Mauritania,1990,339
 435,Mauritania,1991,0
 435,Mauritania,1992,7
 435,Mauritania,1994,0
@@ -152,19 +148,13 @@ ccode,countryname,styr,ndeath
 437,Cote d'Ivoire,1997,1
 437,Cote d'Ivoire,1998,6
 437,Cote d'Ivoire,1999,5
-437,Cote d'Ivoire,2000,232
 437,Cote d'Ivoire,2001,26
 437,Cote d'Ivoire,2002,7
 437,Cote d'Ivoire,2003,36
-437,Cote d'Ivoire,2004,250
-437,Cote d'Ivoire,2005,192
 437,Cote d'Ivoire,2006,36
 437,Cote d'Ivoire,2007,5
 437,Cote d'Ivoire,2008,22
 437,Cote d'Ivoire,2009,23
-437,Cote d'Ivoire,2010,192
-437,Cote d'Ivoire,2011,912
-437,Cote d'Ivoire,2012,191
 437,Cote d'Ivoire,2013,79
 437,Cote d'Ivoire,2014,9
 438,Guinea,1991,0
@@ -179,13 +169,10 @@ ccode,countryname,styr,ndeath
 438,Guinea,2004,2
 438,Guinea,2005,3
 438,Guinea,2006,14
-438,Guinea,2007,139
 438,Guinea,2008,10
-438,Guinea,2009,160
 438,Guinea,2010,17
 438,Guinea,2011,89
 438,Guinea,2012,15
-438,Guinea,2013,212
 438,Guinea,2014,10
 439,Burkina Faso,1991,2
 439,Burkina Faso,1994,0
@@ -215,7 +202,6 @@ ccode,countryname,styr,ndeath
 450,Liberia,1993,0
 450,Liberia,1994,0
 450,Liberia,1995,30
-450,Liberia,1996,1555
 450,Liberia,1997,5
 450,Liberia,1998,48
 450,Liberia,1999,0
@@ -236,7 +222,6 @@ ccode,countryname,styr,ndeath
 451,Sierra Leone,1990,1
 451,Sierra Leone,1991,89
 451,Sierra Leone,1992,0
-451,Sierra Leone,1994,128
 451,Sierra Leone,1995,0
 451,Sierra Leone,1996,34
 451,Sierra Leone,1997,1
@@ -259,14 +244,11 @@ ccode,countryname,styr,ndeath
 452,Ghana,1991,0
 452,Ghana,1992,63
 452,Ghana,1993,0
-452,Ghana,1994,6000
-452,Ghana,1995,128
 452,Ghana,1996,5
 452,Ghana,1997,25
 452,Ghana,1998,5
 452,Ghana,1999,4
 452,Ghana,2000,11
-452,Ghana,2001,176
 452,Ghana,2002,41
 452,Ghana,2003,0
 452,Ghana,2004,3
@@ -276,7 +258,6 @@ ccode,countryname,styr,ndeath
 452,Ghana,2012,0
 452,Ghana,2013,1
 461,Togo,1990,3
-461,Togo,1991,114
 461,Togo,1992,22
 461,Togo,1993,46
 461,Togo,1994,43
@@ -287,7 +268,6 @@ ccode,countryname,styr,ndeath
 461,Togo,2002,0
 461,Togo,2003,0
 461,Togo,2004,13
-461,Togo,2005,135
 461,Togo,2006,0
 461,Togo,2007,0
 461,Togo,2009,6
@@ -297,7 +277,6 @@ ccode,countryname,styr,ndeath
 461,Togo,2013,0
 461,Togo,2014,0
 471,Cameroon,1990,6
-471,Cameroon,1991,1116
 471,Cameroon,1992,38
 471,Cameroon,1993,35
 471,Cameroon,1994,19
@@ -314,38 +293,13 @@ ccode,countryname,styr,ndeath
 471,Cameroon,2005,9
 471,Cameroon,2006,1
 471,Cameroon,2007,32
-471,Cameroon,2008,260
 471,Cameroon,2009,6
 471,Cameroon,2010,8
 471,Cameroon,2011,18
 471,Cameroon,2012,0
 471,Cameroon,2013,2
-471,Cameroon,2014,636
 475,Nigeria,1990,0
-475,Nigeria,1991,458
-475,Nigeria,1992,1882
-475,Nigeria,1993,605
-475,Nigeria,1994,364
 475,Nigeria,1995,31
-475,Nigeria,1996,854
-475,Nigeria,1997,258
-475,Nigeria,1998,3720
-475,Nigeria,1999,785
-475,Nigeria,2000,1973
-475,Nigeria,2001,1213
-475,Nigeria,2002,859
-475,Nigeria,2003,567
-475,Nigeria,2004,1504
-475,Nigeria,2005,214
-475,Nigeria,2006,435
-475,Nigeria,2007,398
-475,Nigeria,2008,844
-475,Nigeria,2009,508
-475,Nigeria,2010,1283
-475,Nigeria,2011,5035
-475,Nigeria,2012,833
-475,Nigeria,2013,2468
-475,Nigeria,2014,8791
 481,Gabon,1990,9
 481,Gabon,1991,2
 481,Gabon,1993,3
@@ -382,15 +336,12 @@ ccode,countryname,styr,ndeath
 482,Central African Republic,2003,19
 482,Central African Republic,2004,12
 482,Central African Republic,2005,12
-482,Central African Republic,2006,138
 482,Central African Republic,2007,7
 482,Central African Republic,2008,26
 482,Central African Republic,2009,96
 482,Central African Republic,2010,87
 482,Central African Republic,2011,17
 482,Central African Republic,2012,18
-482,Central African Republic,2013,352
-482,Central African Republic,2014,4263
 483,Chad,1989,0
 483,Chad,1992,0
 483,Chad,1993,41
@@ -398,14 +349,9 @@ ccode,countryname,styr,ndeath
 483,Chad,1997,0
 483,Chad,1998,0
 483,Chad,1999,1
-483,Chad,2000,129
 483,Chad,2001,1
 483,Chad,2002,0
 483,Chad,2003,65
-483,Chad,2004,153
-483,Chad,2005,119
-483,Chad,2006,205
-483,Chad,2007,636
 483,Chad,2008,1
 483,Chad,2009,0
 483,Chad,2010,0
@@ -429,31 +375,9 @@ ccode,countryname,styr,ndeath
 484,Republic of Congo,2008,0
 484,Republic of Congo,2012,1
 484,Republic of Congo,2013,6
-490,Democratic Republic of Congo,2013,354
-490,Democratic Republic of the Congo,1990,114
-490,Democratic Republic of the Congo,1991,1425
 490,Democratic Republic of the Congo,1992,70
-490,Democratic Republic of the Congo,1993,9060
-490,Democratic Republic of the Congo,1994,379
-490,Democratic Republic of the Congo,1995,309
-490,Democratic Republic of the Congo,1996,167
-490,Democratic Republic of the Congo,1997,256
 490,Democratic Republic of the Congo,1998,53
-490,Democratic Republic of the Congo,1999,5420
 490,Democratic Republic of the Congo,2000,44
-490,Democratic Republic of the Congo,2001,434
-490,Democratic Republic of the Congo,2002,4635
-490,Democratic Republic of the Congo,2003,1020
-490,Democratic Republic of the Congo,2004,320
-490,Democratic Republic of the Congo,2005,609
-490,Democratic Republic of the Congo,2006,360
-490,Democratic Republic of the Congo,2007,230
-490,Democratic Republic of the Congo,2008,3046
-490,Democratic Republic of the Congo,2009,2773
-490,Democratic Republic of the Congo,2010,138
-490,Democratic Republic of the Congo,2011,140
-490,Democratic Republic of the Congo,2012,282
-490,Democratic Republic of the Congo,2014,674
 500,Uganda,1978,0
 500,Uganda,1991,0
 500,Uganda,1993,0
@@ -477,32 +401,16 @@ ccode,countryname,styr,ndeath
 500,Uganda,2011,9
 500,Uganda,2012,1
 500,Uganda,2013,0
-500,Uganda,2014,299
 501,Kenya,1990,73
-501,Kenya,1991,824
-501,Kenya,1992,276
-501,Kenya,1993,302
 501,Kenya,1994,24
 501,Kenya,1995,13
 501,Kenya,1996,84
-501,Kenya,1997,269
-501,Kenya,1998,695
 501,Kenya,1999,69
-501,Kenya,2000,232
-501,Kenya,2001,452
-501,Kenya,2002,159
 501,Kenya,2003,48
 501,Kenya,2004,34
-501,Kenya,2005,351
-501,Kenya,2006,252
-501,Kenya,2007,21463
-501,Kenya,2008,257
 501,Kenya,2009,36
 501,Kenya,2010,20
 501,Kenya,2011,64
-501,Kenya,2012,520
-501,Kenya,2013,289
-501,Kenya,2014,491
 510,Tanzania,1990,0
 510,Tanzania,1991,0
 510,Tanzania,1992,0
@@ -527,9 +435,6 @@ ccode,countryname,styr,ndeath
 510,Tanzania,2014,22
 516,Burundi,1991,0
 516,Burundi,1993,15
-516,Burundi,1994,1564
-516,Burundi,1995,121
-516,Burundi,1996,318
 516,Burundi,1997,15
 516,Burundi,1998,0
 516,Burundi,1999,6
@@ -544,18 +449,12 @@ ccode,countryname,styr,ndeath
 516,Burundi,2008,26
 516,Burundi,2009,14
 516,Burundi,2010,71
-516,Burundi,2011,108
 516,Burundi,2012,21
 516,Burundi,2013,13
-516,Burundi,2014,171
 517,Rwanda,1990,0
 517,Rwanda,1991,0
-517,Rwanda,1992,686
-517,Rwanda,1993,397
 517,Rwanda,1994,96
-517,Rwanda,1995,2683
 517,Rwanda,1996,88
-517,Rwanda,1997,612
 517,Rwanda,1999,0
 517,Rwanda,2002,0
 517,Rwanda,2003,0
@@ -569,37 +468,17 @@ ccode,countryname,styr,ndeath
 517,Rwanda,2013,7
 517,Rwanda,2014,0
 520,Somalia,1986,0
-520,Somalia,1990,584
 520,Somalia,1992,0
 520,Somalia,1993,16
-520,Somalia,1994,299
-520,Somalia,1995,103
-520,Somalia,1996,208
-520,Somalia,1997,662
-520,Somalia,1998,524
-520,Somalia,1999,516
-520,Somalia,2000,707
-520,Somalia,2001,174
-520,Somalia,2002,651
-520,Somalia,2003,333
-520,Somalia,2004,171
-520,Somalia,2005,291
-520,Somalia,2006,530
-520,Somalia,2007,134
-520,Somalia,2008,168
 520,Somalia,2009,61
 520,Somalia,2010,99
 520,Somalia,2011,65
 520,Somalia,2012,75
-520,Somalia,2013,195
-520,Somalia,2014,628
 530,Ethiopia,1964,0
 530,Ethiopia,1976,0
 530,Ethiopia,1987,0
 530,Ethiopia,1989,0
 530,Ethiopia,1990,0
-530,Ethiopia,1991,100
-530,Ethiopia,1992,260
 530,Ethiopia,1993,3
 530,Ethiopia,1994,0
 530,Ethiopia,1995,5
@@ -609,13 +488,8 @@ ccode,countryname,styr,ndeath
 530,Ethiopia,1999,6
 530,Ethiopia,2000,15
 530,Ethiopia,2001,41
-530,Ethiopia,2002,176
-530,Ethiopia,2004,200
-530,Ethiopia,2005,605
-530,Ethiopia,2006,349
 530,Ethiopia,2007,44
 530,Ethiopia,2008,4
-530,Ethiopia,2010,354
 530,Ethiopia,2011,0
 530,Ethiopia,2012,72
 530,Ethiopia,2013,6
@@ -640,9 +514,7 @@ ccode,countryname,styr,ndeath
 540,Angola,1993,0
 540,Angola,1994,0
 540,Angola,1995,0
-540,Angola,1996,139
 540,Angola,1997,57
-540,Angola,1998,138
 540,Angola,1999,14
 540,Angola,2000,2
 540,Angola,2001,26
@@ -668,7 +540,6 @@ ccode,countryname,styr,ndeath
 541,Mozambique,1997,1
 541,Mozambique,1998,0
 541,Mozambique,1999,0
-541,Mozambique,2000,127
 541,Mozambique,2001,0
 541,Mozambique,2002,0
 541,Mozambique,2003,1
@@ -681,7 +552,6 @@ ccode,countryname,styr,ndeath
 541,Mozambique,2012,2
 541,Mozambique,2013,58
 541,Mozambique,2014,6
-551,Zambia,1990,128
 551,Zambia,1991,0
 551,Zambia,1992,0
 551,Zambia,1993,0
@@ -724,7 +594,6 @@ ccode,countryname,styr,ndeath
 552,Zimbabwe,2005,1
 552,Zimbabwe,2006,0
 552,Zimbabwe,2007,1
-552,Zimbabwe,2008,116
 552,Zimbabwe,2009,0
 552,Zimbabwe,2010,0
 552,Zimbabwe,2011,1
@@ -732,7 +601,6 @@ ccode,countryname,styr,ndeath
 552,Zimbabwe,2013,1
 552,Zimbabwe,2014,2
 553,Malawi,1990,20
-553,Malawi,1992,116
 553,Malawi,1993,23
 553,Malawi,1994,0
 553,Malawi,1995,0
@@ -754,16 +622,7 @@ ccode,countryname,styr,ndeath
 553,Malawi,2012,0
 553,Malawi,2013,0
 553,Malawi,2014,3
-560,South Africa,1990,5104
-560,South Africa,1991,1438
-560,South Africa,1992,1099
-560,South Africa,1993,4099
-560,South Africa,1994,836
-560,South Africa,1995,357
-560,South Africa,1996,678
 560,South Africa,1997,91
-560,South Africa,1998,213
-560,South Africa,1999,106
 560,South Africa,2000,37
 560,South Africa,2001,65
 560,South Africa,2002,18
@@ -772,7 +631,6 @@ ccode,countryname,styr,ndeath
 560,South Africa,2005,2
 560,South Africa,2006,61
 560,South Africa,2007,3
-560,South Africa,2008,194
 560,South Africa,2009,3
 560,South Africa,2010,12
 560,South Africa,2011,6
@@ -794,7 +652,6 @@ ccode,countryname,styr,ndeath
 565,Namibia,2010,0
 565,Namibia,2011,0
 565,Namibia,2014,1
-570,Lesotho,1991,136
 570,Lesotho,1992,6
 570,Lesotho,1994,16
 570,Lesotho,1995,2
@@ -844,7 +701,6 @@ ccode,countryname,styr,ndeath
 572,Swaziland,2012,2
 572,Swaziland,2014,0
 580,Madagascar,1990,3
-580,Madagascar,1991,302
 580,Madagascar,1992,0
 580,Madagascar,1993,2
 580,Madagascar,1996,0
@@ -856,10 +712,8 @@ ccode,countryname,styr,ndeath
 580,Madagascar,2004,0
 580,Madagascar,2005,0
 580,Madagascar,2006,1
-580,Madagascar,2009,187
 580,Madagascar,2010,3
 580,Madagascar,2011,0
-580,Madagascar,2012,110
 580,Madagascar,2013,5
 580,Madagascar,2014,43
 590,Mauritius,1999,10
@@ -868,7 +722,6 @@ ccode,countryname,styr,ndeath
 590,Mauritius,2002,0
 590,Mauritius,2004,0
 590,Mauritius,2005,1
-600,Morocco,1990,106
 600,Morocco,1991,0
 600,Morocco,1993,0
 600,Morocco,1994,2
@@ -894,7 +747,6 @@ ccode,countryname,styr,ndeath
 600,Morocco,2014,5
 615,Algeria,1990,2
 615,Algeria,1991,0
-615,Algeria,1992,131
 615,Algeria,1993,0
 615,Algeria,1994,0
 615,Algeria,1995,99
@@ -903,7 +755,6 @@ ccode,countryname,styr,ndeath
 615,Algeria,1998,4
 615,Algeria,1999,0
 615,Algeria,2000,0
-615,Algeria,2001,126
 615,Algeria,2002,8
 615,Algeria,2003,0
 615,Algeria,2004,0
@@ -916,7 +767,6 @@ ccode,countryname,styr,ndeath
 615,Algeria,2011,50
 615,Algeria,2012,10
 615,Algeria,2013,91
-615,Algeria,2014,106
 616,Tunisia,1991,4
 616,Tunisia,1995,6
 616,Tunisia,1998,0
@@ -929,7 +779,6 @@ ccode,countryname,styr,ndeath
 616,Tunisia,2006,2
 616,Tunisia,2007,13
 616,Tunisia,2009,0
-616,Tunisia,2010,223
 616,Tunisia,2011,32
 616,Tunisia,2012,24
 616,Tunisia,2013,41
@@ -938,9 +787,7 @@ ccode,countryname,styr,ndeath
 620,Libya,1992,1
 620,Libya,1993,0
 620,Libya,1995,54
-620,Libya,1996,420
 620,Libya,1998,0
-620,Libya,2000,137
 620,Libya,2001,0
 620,Libya,2002,0
 620,Libya,2003,0
@@ -949,40 +796,16 @@ ccode,countryname,styr,ndeath
 620,Libya,2006,12
 620,Libya,2007,0
 620,Libya,2008,0
-620,Libya,2011,1008
-620,Libya,2012,568
-620,Libya,2013,243
-620,Libya,2014,4883
 625,Sudan,1983,0
 625,Sudan,1990,0
 625,Sudan,1991,0
 625,Sudan,1992,5
-625,Sudan,1993,200
 625,Sudan,1994,0
-625,Sudan,1995,1164
 625,Sudan,1996,14
-625,Sudan,1997,465
 625,Sudan,1998,74
-625,Sudan,1999,189
 625,Sudan,2000,27
 625,Sudan,2001,2
-625,Sudan,2002,2952
 625,Sudan,2003,28
-625,Sudan,2004,307
-625,Sudan,2005,462
-625,Sudan,2006,217
-625,Sudan,2007,495
-625,Sudan,2008,285
-625,Sudan,2009,1584
-625,Sudan,2010,499
-625,Sudan,2011,1394
-625,Sudan,2012,129
-625,Sudan,2013,1493
-625,Sudan,2014,695
-626,South Sudan,2011,637
-626,South Sudan,2012,640
-626,South Sudan,2013,1757
-626,South Sudan,2014,1518
 651,Egypt,1990,32
 651,Egypt,1991,3
 651,Egypt,1992,40
@@ -998,13 +821,8 @@ ccode,countryname,styr,ndeath
 651,Egypt,2002,6
 651,Egypt,2003,0
 651,Egypt,2004,67
-651,Egypt,2005,152
 651,Egypt,2006,54
 651,Egypt,2007,2
 651,Egypt,2008,7
 651,Egypt,2009,6
 651,Egypt,2010,28
-651,Egypt,2011,1132
-651,Egypt,2012,622
-651,Egypt,2013,2712
-651,Egypt,2014,785
